@@ -9,14 +9,14 @@ function GameOptions(){
         <div> 
             <MDBContainer className="mt-5">
                 <label>Symbol</label>
-                <MDBInput gap label="X" checked={playerSymbol === 'X'} value="X" onClick={() => setPlayerSymbol('X')} />
-                <MDBInput gap label="O" checked={playerSymbol === '0'} value="0" onClick={() => setPlayerSymbol('O')} />
+                <MDBInput gap className="mt-5" label="X" checked={playerSymbol === 'X'} value="X" onClick={() => setPlayerSymbol('X')} label="X" type="radio" />
+                <MDBInput gap className="mt-5" label="O" checked={playerSymbol === 'O'} value="O" onClick={() => setPlayerSymbol('O')} label="O" type="radio" />
             </MDBContainer>
             <br/>
             <MDBContainer className="mt-5">
                 <label>Do you want to go 1st or second?</label>
-                <Form.Radio label="true" checked={playerFirst === true} value="X" onClick={() => setPlayerFirst(true)} />
-                <Form.Radio label="false" checked={playerFirst === false} value="0" onClick={() => setPlayerSymbol(false)} />
+                <MDBInput gap className="mt-5" label="true" checked={playerFirst === true} value="true" onClick={() => setPlayerFirst(true)}  label="First" type="radio" />
+                <MDBInput gap className="mt-5" label="false" checked={playerFirst === false} value="false" onClick={() => setPlayerFirst(false)}  label="Second" type="radio" />
             </MDBContainer>
         </div>
     );

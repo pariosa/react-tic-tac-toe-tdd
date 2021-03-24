@@ -10,16 +10,16 @@ function TicTacToeGrid(){
                 row.push(<TicTacToeSquare key={i} x={x} y={i} />);
             }
             rows.push(
-                <div className="tic-tac-row">
+                <div key={x} className="tic-tac-row">
                     {rows}
                 </div>
             );
-        };
+        }; 
         return rows;
     }
     return(
         <>
-            {/*getRows()*/}
+            {getRows}
         </>
     )
 }
