@@ -11,16 +11,16 @@ function TicTacToeGrid(){
             }
             rows.push(
                 <div key={x} className="tic-tac-row">
-                    {rows}
+                    {row}
                 </div>
             );
         }; 
         return rows;
     }
     return(
-        <>
-            {getRows}
-        </>
+        <div>
+            {getRows()}
+        </div>
     )
 }
 export default TicTacToeGrid;
