@@ -11,8 +11,10 @@ const gameReducer = (state,action) =>{
             const col = action.payload.target.getAttribute('col');
             const symbol = state.options.playerSymbol;
             const nextSymbol = state.options.playerSymbol === "X" ? "O": "X";
+            console.log(state.history);
             let nextState = {...state, 
                 options:{playerSymbol:nextSymbol},
+                history:[...state.history, state],
                 ticTacGrid: state.ticTacGrid.map(
                     (gridRow, index) =>{ 
                         return (index).toString() != row ? gridRow : [
@@ -28,7 +30,7 @@ const gameReducer = (state,action) =>{
             };
             const isWon = winningState(nextState);  
             isWon ? 
-                nextState = {...nextState,gameOver:isWon,result:isWon}
+                nextState = {...nextState,gameOver:isWon,result:isWon,history:[...state.history, state]}
                 : nextState;
             return nextState;
         case "result":

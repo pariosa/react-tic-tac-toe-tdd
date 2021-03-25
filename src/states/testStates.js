@@ -20,5 +20,6 @@ export const testStateNonEmpty = {
     options:{
         playerSymbol:"X"
     },
-    gameOver:false
+    gameOver:false,
+    history:[]
 };

@@ -20,6 +20,7 @@ const initialState = {
     options:{
         playerSymbol:"X"
     },
-    gameOver:false
+    gameOver:false,
+    history:[]
 };
 export default initialState;
