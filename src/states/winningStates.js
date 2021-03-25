@@ -17,6 +17,7 @@ export default function winningState(state){
           result.push(e[i]);
         });
     };
+    
     if((result[0].value === result[1].value) && (result[0].value === result[2].value) && (result[0].value !== "")){
         winFlag = 1;
         winTeam = result[0].value
@@ -29,38 +30,34 @@ export default function winningState(state){
         winFlag = 1;
         winTeam = result[6].value
     }  
-  
 
     //tie status, all slots are non ""
     let emptyFlag = 0
     result.forEach(e=>{ 
         if(e.value !== "O" && e.value !== "X" ){emptyFlag += 1}
-        debugger;
-    })
-    
+    }) 
 
     //if(row(0) col(0), row(1) col(1), and row(2) col(2) are all the same val
-        const conA = state.ticTacGrid[0][0].value;
-        const conB = state.ticTacGrid[1][1].value;
-        const conC = state.ticTacGrid[2][2].value; 
-        if((conA === conB) && (conA === conC) && (conA !== "")){
-            winFlag = 1;
-            winTeam = conA;
-        }   
-
+    const conA = state.ticTacGrid[0][0].value;
+    const conB = state.ticTacGrid[1][1].value;
+    const conC = state.ticTacGrid[2][2].value; 
+    if((conA === conB) && (conA === conC) && (conA !== "")){
+        winFlag = 1;
+        winTeam = conA;
+    }    
 
     //if row(0) col(2), row(1) col(1), and row(2), col(0) are all the same val
-        const con1 = state.ticTacGrid[0][2].value;
-        const con2 = state.ticTacGrid[1][1].value;
-        const con3 = state.ticTacGrid[2][0].value;
-        if((con1 === con2) && (con1 === con3) && (con1 !== "")){
-            winFlag = 1;
-            winTeam = con1;
-        }  
-        if (emptyFlag === 0){
-            return(winFlag, "TIE");
-        }
+    const con1 = state.ticTacGrid[0][2].value;
+    const con2 = state.ticTacGrid[1][1].value;
+    const con3 = state.ticTacGrid[2][0].value;
+    if((con1 === con2) && (con1 === con3) && (con1 !== "")){
+        winFlag = 1;
+        winTeam = con1;
+    }  
+    if (emptyFlag === 0){
+        return(winFlag, "TIE");
+    }
          
-        //return winFlag === 1 ? true : false;
-        return (winFlag, winTeam);
+    //return winFlag === 1 ? true : false;
+    return (winFlag, winTeam);
 };

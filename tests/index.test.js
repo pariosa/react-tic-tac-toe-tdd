@@ -46,8 +46,17 @@ it('check to see if output of grid matches state object in state with data', () 
 });
 
 it('checks a state where player O wins', ()=>{
-
+    const testOGrid = mount(<Layout {...initialState} />);
+    testOGrid.find('.tic-tac-square').at(2).simulate('click');
+    testOGrid.find('.tic-tac-square').at(0).simulate('click');
+    testOGrid.find('.tic-tac-square').at(1).simulate('click');
+    testOGrid.find('.tic-tac-square').at(3).simulate('click');
+    testOGrid.find('.tic-tac-square').at(4).simulate('click'); 
+    testOGrid.find('.tic-tac-square').at(6).simulate('click'); 
+    //console.log(testXGrid.debug());  
+    expect(testOGrid.find(".result").find('h1').prop("result")).toBe("O");
 });
+
 it('checks a state where player X wins', ()=>{
     const testXGrid = mount(<Layout {...initialState} />);
     testXGrid.find('.tic-tac-square').at(0).simulate('click');
@@ -55,7 +64,7 @@ it('checks a state where player X wins', ()=>{
     testXGrid.find('.tic-tac-square').at(4).simulate('click');
     testXGrid.find('.tic-tac-square').at(5).simulate('click');
     testXGrid.find('.tic-tac-square').at(8).simulate('click'); 
-    console.log(testXGrid.debug());  
+    //console.log(testXGrid.debug());  
 
     expect(testXGrid.find(".result").find('h1').prop("result")).toBe("X");
 });
