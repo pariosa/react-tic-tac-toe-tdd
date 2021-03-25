@@ -17,7 +17,7 @@ export default function winningState(state){
           result.push(e[i]);
         });
     };
-    
+
     if((result[0].value === result[1].value) && (result[0].value === result[2].value) && (result[0].value !== "")){
         winFlag = 1;
         winTeam = result[0].value
@@ -54,7 +54,7 @@ export default function winningState(state){
         winFlag = 1;
         winTeam = con1;
     }  
-    if (emptyFlag === 0){
+    if (emptyFlag === 0 && winFlag === 0){
         return(winFlag, "TIE");
     }
          

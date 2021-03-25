@@ -15,14 +15,22 @@ function Layout(){
                 userPress={handleUserPress}
             />
             { state.gameOver ? 
-            <h1 className="result" result={state.result} style={{color:"red"}}>
-                the winner is {state.result}
-                <br/>
-                <button onClick={ ()=>{dispatch({type:"reset"})}}> RESET </button>
-            </h1>
-            : 
-            <h1 className="result" result={state.result} style={{color:"green"}}>the game is on</h1>
-            }
+                <>
+                {(state.result === "TIE") ? 
+                    <h1 className="result" result={state.result} style={{color:"orange"}}>
+                        It's a {state.result}
+                    </h1>
+                : 
+                    <h1 className="result" result={state.result} style={{color:"red"}}>
+                        the winner is {state.result}
+                    </h1>
+                }
+                    <br/>
+                    <button onClick={ ()=>{dispatch({type:"reset"})}}> RESET </button>
+                </>
+            :
+                <h1 className="result" result={state.result} style={{color:"green"}}>the game is on</h1>
+            }  
         </div> 
     ); 
 }
