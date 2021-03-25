@@ -10,10 +10,10 @@
     height:15vh;
 }
 .tic-tac-square:nth-child(1){
-    border-bottom: 10px solid grey;
+    border-bottom: 10px solid #1e54c9;
 }
 .tic-tac-square:nth-child(2){
-    border-bottom: 10px solid grey;
+    border-bottom: 10px solid #1e54c9;
 } 
 .row0.col0{
     border-top-left-radius: 70px;
@@ -28,21 +28,21 @@
     border-bottom-left-radius: 70px;
 }
 .row1.col0{
-    border-right: 10px solid grey;
+    border-right: 10px solid #1e54c9;
     
 }
 .row1.col1{
-    border-right: 10px solid grey;
+    border-right: 10px solid #1e54c9;
 }
 .row1.col2{
-    border-right: 10px solid grey;
+    border-right: 10px solid #1e54c9;
 }
 .row0.col0{
-    border-right: 10px solid grey;
+    border-right: 10px solid #1e54c9;
 }
 .row0.col1{
-    border-right: 10px solid grey;
+    border-right: 10px solid #1e54c9;
 }
 .row0.col2{
-    border-right: 10px solid grey;
+    border-right: 10px solid #1e54c9;
 }

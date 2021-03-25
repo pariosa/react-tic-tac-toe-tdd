@@ -4,7 +4,7 @@ import gameReducer from './reducers/gameReducer';
 import initialState  from './states/initialState';
 import "./TicTacToeSquare/TicTacToeSquare.css";
 import "./TicTacToeGrid/TicTacToeGrid.css";
-
+import "./index.css";
 function Layout(){ 
     const [state,dispatch] = useReducer(gameReducer, initialState);
     const handleUserPress = (payload) => {
@@ -20,22 +20,30 @@ function Layout(){
             { state.gameOver ? 
                 <>
                 {(state.result === "TIE") ? 
-                    <h1 className="result" result={state.result} style={{color:"orange"}}>
+                    <h2 className="result" result={state.result} style={{color:"orange"}}>
                         It's a {state.result}
-                    </h1>
+                    </h2>
                 : 
-                    <h1 className="result" result={state.result} style={{color:"red"}}>
+                    <h2 className="result" result={state.result} style={{color:"red"}}>
                         the winner is {state.result}
-                    </h1>
+                    </h2>
                 }
                     <br/>
-                    <button onClick={ ()=>{dispatch({type:"reset"})}}> RESET </button>
+                    <div className="btn-contain">
+                        <button onClick={ ()=>{dispatch({type:"reset"})}}> RESET </button>
+                    </div>
                 </>
             :
                 <h1 className="result" result={state.result} style={{color:"green"}}>the game is on</h1>
             }  
+            {state.history.length > 0 ?
+                        <div className="btn-contain"> 
+                            <button onClick={ ()=>{dispatch({type:"rewind_time"})}}> REWIND TIME </button>
+                        </div>
 
-            <button onClick={ ()=>{dispatch({type:"rewind_time"})}}> REWIND TIME </button>
+            :
+                 <h3>Player ❌ goes first</h3>
+            }
         </div> 
     ); 
 }
