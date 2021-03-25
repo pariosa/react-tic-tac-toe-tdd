@@ -21,20 +21,20 @@ const initialState = {
         ],
     ],
     options:{
-        playerSymbol:"X",
-        playerFirst:true
+        playerSymbol:"X"
     }
 };
 
 const reducer = (state,action) =>{ 
- 
     switch(action.type){
         case "update_cell":
             const row = action.payload.target.getAttribute('row');
             const col = action.payload.target.getAttribute('col');
-            const symbol = state.options.playerSymbol; 
+            const symbol = state.options.playerSymbol;
+            const nextSymbol = state.options.playerSymbol === "X" ? "O": "X";
             console.log();
             return{...state, 
+                options:{playerSymbol:nextSymbol},
                 ticTacGrid: state.ticTacGrid.map(
                 (gridRow, index) =>{ 
                     return (index).toString() != row ? gridRow : [
