@@ -1,0 +1,8 @@
+.tic-tac-grid{
+    display: grid;
+    width:75%; 
+    max-Width:500px;
+    margin:0 auto;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}

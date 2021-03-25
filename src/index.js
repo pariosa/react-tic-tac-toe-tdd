@@ -2,6 +2,9 @@ import React, {useReducer} from 'react';
 import TicTacToeGrid from "./TicTacToeGrid/TicTacToeGrid"; 
 import gameReducer from './reducers/gameReducer';
 import initialState  from './states/initialState';
+import "./TicTacToeSquare/TicTacToeSquare.css";
+import "./TicTacToeGrid/TicTacToeGrid.css";
+
 function Layout(){ 
     const [state,dispatch] = useReducer(gameReducer, initialState);
     const handleUserPress = (payload) => {

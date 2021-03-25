@@ -12,7 +12,7 @@ function TicTacToeGrid(props){
                 row.push(<TicTacToeSquare key={i} x={x} y={i} userPress={userPress} value={value} />);
             }
             rows.push(
-                <div style={{marginBottom:"100px", marginTop:"100px"}}key={x} className="tic-tac-row">
+                <div key={x} className="tic-tac-row">
                     {row}
                     <br/>
                 </div>
