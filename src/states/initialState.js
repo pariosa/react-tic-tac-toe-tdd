@@ -1,8 +1,3 @@
-import React, { Component } from 'react';
-import { shallow } from 'enzyme';
-import '@testing-library/jest-dom';
-import TicTacToeGrid from "../src/TicTacToeGrid/TicTacToeGrid";
-
 const initialState = {
     ticTacGrid:[
         [
@@ -27,8 +22,4 @@ const initialState = {
     },
     gameOver:false
 };
-const ticTacToeGrid = shallow(<TicTacToeGrid state={initialState} />);
-
-it('renders correctly', () => {  
-    expect(ticTacToeGrid).toMatchSnapshot();
-});
+export default initialState;

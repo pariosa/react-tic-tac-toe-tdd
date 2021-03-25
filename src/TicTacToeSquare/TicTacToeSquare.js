@@ -5,7 +5,7 @@ function TicTacToeSquare(props){
 
     return(
         <>
-            <div style={{display:"inline", fontSize:"50px",margin:"7%", cursor:"pointer"}} value={value} row={x} col={y} className={`row${x} col ${y}`} onClick={(e)=>userPress(e.nativeEvent)}>
+            <div style={{display:"inline", fontSize:"50px",margin:"5%", cursor:"pointer"}} value={value} row={x} col={y} className={`row${x} col ${y}`} onClick={(e)=>userPress(e.nativeEvent)}>
                 [  {value} ]
             </div>
         </>
