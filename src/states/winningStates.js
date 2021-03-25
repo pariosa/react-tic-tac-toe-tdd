@@ -1,7 +1,8 @@
 export default function winningState(state){
     let winFlag = 0;
     let winTeam = "";
-     
+    let emptyFlag = 0;
+    
     //if one row has all the same val
     state.ticTacGrid.forEach((row)=>{
         if((row[0].value === row[1].value)&& (row[0].value === row[2].value) && (row[0].value !== "")){
@@ -32,7 +33,6 @@ export default function winningState(state){
     }  
 
     //tie status, all slots are non ""
-    let emptyFlag = 0
     result.forEach(e=>{ 
         if(e.value !== "O" && e.value !== "X" ){emptyFlag += 1}
     }) 

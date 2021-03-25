@@ -3,8 +3,7 @@ import { MDBContainer, MDBInput } from "mdbreact";
 
 function GameOptions(){
     const [playerSymbol, setPlayerSymbol] = useState('X');
-    const [playerFirst, setPlayerFirst] = useState(true);
-    const [optionsDisabled, setOptionsDisabled] = useState(false); 
+    const [playerFirst, setPlayerFirst] = useState(true); 
     return(
         <div> 
             <MDBContainer className="mt-5">
