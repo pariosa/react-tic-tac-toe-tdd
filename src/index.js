@@ -34,6 +34,8 @@ function Layout(){
             :
                 <h1 className="result" result={state.result} style={{color:"green"}}>the game is on</h1>
             }  
+
+            <button onClick={ ()=>{dispatch({type:"rewind_time"})}}> REWIND TIME </button>
         </div> 
     ); 
 }

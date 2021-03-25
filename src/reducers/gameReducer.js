@@ -39,6 +39,13 @@ const gameReducer = (state,action) =>{
             return {...state, gameOver:isWon};
         case "reset":
             return initialState;
+        case "rewind_time":
+            let time = state.history.length;
+            if(time > 1){
+                return {...state.history[time-1]}
+            }else{
+                return initialState
+            }
     }
 } 
 export default gameReducer;
