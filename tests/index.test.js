@@ -45,8 +45,22 @@ it('check to see if output of grid matches state object in state with data', () 
     expect(testLayoutGrid.find(".tic-tac-square").at(8).prop("value")).toBe(testStateNonEmpty.ticTacGrid[2][2].value);
 });
 
-it('checks a draw state',() => {
+it('checks a state where player O wins', ()=>{
 
+});
+it('checks a state where player X wins', ()=>{
+    const testXGrid = mount(<Layout {...initialState} />);
+    testXGrid.find('.tic-tac-square').at(0).simulate('click');
+    testXGrid.find('.tic-tac-square').at(1).simulate('click');
+    testXGrid.find('.tic-tac-square').at(4).simulate('click');
+    testXGrid.find('.tic-tac-square').at(5).simulate('click');
+    testXGrid.find('.tic-tac-square').at(8).simulate('click'); 
+    console.log(testXGrid.debug());  
+
+    expect(testXGrid.find(".result").find('h1').prop("result")).toBe("X");
+});
+
+it('checks a draw state',() => {
     const testDrawGrid = mount(<Layout {...initialState} />);
     //expect(testLayoutGrid.hasClass('tic-tac-grid')).toEqual(true);
     testDrawGrid.find('.tic-tac-square').at(0).simulate('click');
@@ -58,10 +72,7 @@ it('checks a draw state',() => {
     testDrawGrid.find('.tic-tac-square').at(3).simulate('click');
     testDrawGrid.find('.tic-tac-square').at(4).simulate('click');
     testDrawGrid.find('.tic-tac-square').at(5).simulate('click');
-
-    //console.log(testDrawGrid.debug());
-    testDrawGrid.update();
-    //console.log();
-    expect(testDrawGrid.find(".result").find('h1').prop("result")).toBe("TIE")
+    //console.log(testDrawGrid.debug());  
+    expect(testDrawGrid.find(".result").find('h1').prop("result")).toBe("TIE");
     //expect(testDrawtGrid.find(".result").first())
 });
