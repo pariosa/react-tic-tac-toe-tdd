@@ -13,7 +13,7 @@ export const testStateNonEmpty = {
         [
             {row:"2", col:"0",value:"O"},
             {row:"2", col:"1",value:""},
-            {row:"2", col:"2",value:"O"}
+            {row:"2", col:"2",value:"X"}
         ],
     ],
     result:undefined,

@@ -17,7 +17,6 @@ export default function winningState(state){
           result.push(e[i]);
         });
     };
-
     if((result[0].value === result[1].value) && (result[0].value === result[2].value) && (result[0].value !== "")){
         winFlag = 1;
         winTeam = result[0].value
@@ -34,7 +33,10 @@ export default function winningState(state){
 
     //tie status, all slots are non ""
     let emptyFlag = 0
-    result.forEach(e=>{ if(e.value !== "O" || e.value !=="X"){emptyFlag += 1}})
+    result.forEach(e=>{ 
+        if(e.value !== "O" && e.value !== "X" ){emptyFlag += 1}
+        debugger;
+    })
     
 
     //if(row(0) col(0), row(1) col(1), and row(2) col(2) are all the same val
@@ -54,9 +56,9 @@ export default function winningState(state){
         if((con1 === con2) && (con1 === con3) && (con1 !== "")){
             winFlag = 1;
             winTeam = con1;
-        } 
+        }  
         if (emptyFlag === 0){
-            return(true,"Tie");
+            return(winFlag, "TIE");
         }
          
         //return winFlag === 1 ? true : false;

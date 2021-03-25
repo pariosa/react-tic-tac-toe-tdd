@@ -30,8 +30,38 @@ it('check to see if output of grid matches state object in state with data', () 
     const testLayoutGrid = mount(<Layout {...testStateNonEmpty} />);
     //expect(testLayoutGrid.hasClass('tic-tac-grid')).toEqual(true);
     testLayoutGrid.find('.tic-tac-square').at(8).simulate('click');
-    console.log(testLayoutGrid.debug());
+    //console.log(testLayoutGrid.debug());
     testLayoutGrid.update();
-    console.log(testLayoutGrid.find('.tic-tac-square').at(1).debug())
+    //console.log(testLayoutGrid.find('.tic-tac-square').at(1).debug())
     expect(testLayoutGrid.find(".tic-tac-square").at(8).prop("value")).toBe(testStateNonEmpty.ticTacGrid[2][2].value);
+});
+
+it('check to see if output of grid matches state object in state with data', () => {  
+    const testLayoutGrid = mount(<Layout {...testStateNonEmpty} />); 
+    testLayoutGrid.find('.tic-tac-square').at(8).simulate('click');
+    //console.log(testLayoutGrid.debug());
+    testLayoutGrid.update();
+    //console.log(testLayoutGrid.find('.tic-tac-square').at(1).debug())
+    expect(testLayoutGrid.find(".tic-tac-square").at(8).prop("value")).toBe(testStateNonEmpty.ticTacGrid[2][2].value);
+});
+
+it('checks a draw state',() => {
+
+    const testDrawGrid = mount(<Layout {...initialState} />);
+    //expect(testLayoutGrid.hasClass('tic-tac-grid')).toEqual(true);
+    testDrawGrid.find('.tic-tac-square').at(0).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(1).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(2).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(6).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(7).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(8).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(3).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(4).simulate('click');
+    testDrawGrid.find('.tic-tac-square').at(5).simulate('click');
+
+    //console.log(testDrawGrid.debug());
+    testDrawGrid.update();
+    //console.log();
+    expect(testDrawGrid.find(".result").find('h1').prop("result")).toBe("TIE")
+    //expect(testDrawtGrid.find(".result").first())
 });
