@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Layout from './index';
+import Layout from '../src/index';
 import '@testing-library/jest-dom';
 import { shallow, mount} from "enzyme";
-import { initialState } from "./reducers/gameReducer";
-import TicTacToeSquare from "./TicTacToeSquare/TicTacToeSquare" 
+import { initialState } from "../src/states/initialState"; 
+import { testStateNonEmpty } from "../src/states/testStates";
+
 const indexSnap = shallow(<Layout state={initialState} />);
-import { testStateNonEmpty } from "./states/testStates";
+
 it('renders', ()=>{
     expect(indexSnap).toMatchSnapshot();
 })
