@@ -6,7 +6,7 @@ function Layout(){
     const [state,dispatch] = useReducer(gameReducer, initialState);
     const handleUserPress = (payload) => {
         dispatch({type:"update_cell",payload:payload});
-    }
+    };
     return ( 
         <div className="Layout">
             <h1>Tic Tac Toe</h1> 
