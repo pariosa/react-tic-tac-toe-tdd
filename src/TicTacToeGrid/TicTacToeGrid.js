@@ -21,7 +21,7 @@ function TicTacToeGrid(props){
         return rows;
     }
     return(
-        <div>
+        <div className="tic-tac-grid">
             {getRows()}
         </div>
     )

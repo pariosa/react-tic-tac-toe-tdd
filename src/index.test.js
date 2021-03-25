@@ -18,16 +18,19 @@ test('renders index element', ()=>{
 });
 
 it("should change the state of the component when an empty space is clicked", () =>{
-    const wrapper = mount(<Layout state={initialState} />);
-    //console.log(wrapper.find(TicTacToeSquare));
-    //wrapper.find('.tic-tac-square')[0].simulate('click');
-    //console.log(testComponent.childAt(0).prop("value"))
-    //expect(testComponent.childAt(0).prop("value")).toBe(undefined);
+    const wrapper = mount(<Layout {...initialState} />); 
+    //console.log(wrapper.debug());
+    wrapper.find('.tic-tac-square').at(0).simulate('click');
+    //console.log(wrapper.find('.tic-tac-square').at(0).prop("value"))
+    expect(wrapper.find('.tic-tac-square').at(0).prop("value")).toBe("X");
 });
 
-it('check to see if output of grid matches state object', () => {  
-    const props = testStateNonEmpty;
-    const testLayoutGrid = mount(<Layout {...props} />).find('.tic-tac-grid');
-    console.log(testLayoutGrid);
-    expect(testLayoutGrid.hasClass('.tic-tac-grid')).toEqual(true);
+it('check to see if output of grid matches state object in state with data', () => {  
+    const testLayoutGrid = mount(<Layout {...testStateNonEmpty} />);
+    //expect(testLayoutGrid.hasClass('tic-tac-grid')).toEqual(true);
+    testLayoutGrid.find('.tic-tac-square').at(8).simulate('click');
+    console.log(testLayoutGrid.debug());
+    testLayoutGrid.update();
+    console.log(testLayoutGrid.find('.tic-tac-square').at(1).debug())
+    expect(testLayoutGrid.find(".tic-tac-square").at(8).prop("value")).toBe(testStateNonEmpty.ticTacGrid[2][2].value);
 });
