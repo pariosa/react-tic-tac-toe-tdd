@@ -19,7 +19,7 @@ const initialState = {
     result:undefined,
     options:{
         playerSymbol:"X"
-    },
+    }, 
     gameOver:false,
     history:[]
 };

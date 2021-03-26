@@ -1,5 +1,5 @@
 .tic-tac-square{
-    background-color: rgb(175, 187, 255);
+    background-color: transparent;
     display:block;
     position:relative;
     font-size:110px; 
@@ -10,10 +10,10 @@
     height:15vh;
 }
 .tic-tac-square:nth-child(1){
-    border-bottom: 10px solid #1e54c9;
+    border-bottom: 10px solid  rgb(175, 187, 255);
 }
 .tic-tac-square:nth-child(2){
-    border-bottom: 10px solid #1e54c9;
+    border-bottom: 10px solid  rgb(175, 187, 255);
 } 
 .row0.col0{
     border-top-left-radius: 70px;
@@ -28,21 +28,28 @@
     border-bottom-left-radius: 70px;
 }
 .row1.col0{
-    border-right: 10px solid #1e54c9;
+    border-right: 10px solid rgb(175, 187, 255);
     
 }
 .row1.col1{
-    border-right: 10px solid #1e54c9;
+    border-right: 10px solid  rgb(175, 187, 255);
 }
 .row1.col2{
-    border-right: 10px solid #1e54c9;
+    border-right: 10px solid  rgb(175, 187, 255);
 }
 .row0.col0{
-    border-right: 10px solid #1e54c9;
+    border-right: 10px solid  rgb(175, 187, 255);
 }
 .row0.col1{
-    border-right: 10px solid #1e54c9;
+    border-right: 10px solid  rgb(175, 187, 255);
 }
 .row0.col2{
-    border-right: 10px solid #1e54c9;
+    border-right: 10px solid  rgb(175, 187, 255);
+}
+.translucent{
+    position:fixed;
+    z-index:-1;
+    margin-left:23px;
+    opacity: 0.5;
+    
 }
