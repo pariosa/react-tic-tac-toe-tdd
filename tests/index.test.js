@@ -105,7 +105,6 @@ it('successfully tie the game, rewind time the same amount of moves, and expect 
     testRewindGrid.find('.rewind').at(0).simulate('click');
     testRewindGrid.find('.rewind').at(0).simulate('click');
     testRewindGrid.find('.rewind').at(0).simulate('click');
-    console.log(testRewindGrid.find('.tic-tac-grid').parent().prop("state")); 
-
+    //console.log(testRewindGrid.find('.tic-tac-grid').parent().prop("state")); 
     expect(testRewindGrid.find('.tic-tac-grid').parent().prop("state")).toEqual(initialState);
  });

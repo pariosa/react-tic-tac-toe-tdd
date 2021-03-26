@@ -9,7 +9,16 @@ function TicTacToeGrid(props){
             let row = [];
             for(let i = 0; i < 3; i++){
                 const value = state.ticTacGrid[x][i].value; 
-                row.push(<TicTacToeSquare key={i} x={x} y={i} userPress={userPress} value={value} currentValue={state.options.playerSymbol} />);
+                row.push(
+                    <TicTacToeSquare 
+                        key={i} 
+                        x={x} 
+                        y={i} 
+                        userPress={userPress} 
+                        value={value} 
+                        currentValue={state.options.playerSymbol} 
+                    />
+                );
             }
             rows.push(
                 <div key={x} className="tic-tac-row">

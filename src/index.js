@@ -20,27 +20,49 @@ function Layout(){
             { state.gameOver ? 
                 <>
                 {(state.result === "TIE") ? 
-                    <h2 className="result" result={state.result} style={{color:"orange"}}>
+                    <h2 
+                        className="result" 
+                        result={state.result} 
+                        style={{color:"orange"}}
+                    >
                         It's a {state.result}
                     </h2>
                 : 
-                    <h2 className="result" result={state.result} style={{color:"red"}}>
+                    <h2 
+                        className="result" 
+                        result={state.result} 
+                        style={{color:"red"}}
+                    >
                         the winner is {state.result}
                     </h2>
                 }
                     <br/>
                     <div className="btn-contain">
-                        <button onClick={ ()=>{dispatch({type:"reset"})}}> RESET </button>
+                        <button 
+                            onClick={ ()=>{dispatch({type:"reset"})}}
+                        > 
+                            RESET
+                        </button>
                     </div>
                 </>
             :
-                <h1 className="result" result={state.result} style={{color:"green"}}>the game is active, next move: {state.options.playerSymbol}</h1>
+                <h1 
+                    className="result" 
+                    result={state.result} 
+                    style={{color:"green"}
+                }>
+                    the game is active, next move: {state.options.playerSymbol}
+                </h1>
             }  
             {state.history.length > 0 ?
                         <div className="btn-contain"> 
-                            <button className="rewind" onClick={ ()=>{dispatch({type:"rewind_time"})}}> REWIND TIME </button>
+                            <button 
+                                className="rewind" 
+                                onClick={ ()=>{dispatch({type:"rewind_time"})}}
+                            > 
+                                REWIND TIME 
+                            </button>
                         </div>
-
             :
                  <h3>Player ❌ goes first</h3>
             }
