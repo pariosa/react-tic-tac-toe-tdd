@@ -12,7 +12,7 @@ function Layout(){
     };
     return ( 
         <div className="Layout">
-            <h1>Tic Tac Toe</h1> 
+            <h1 className="title font-effect-anaglyph">Tic Tac Toe</h1> 
             <TicTacToeGrid 
                 state={state}
                 userPress={handleUserPress}
@@ -36,14 +36,6 @@ function Layout(){
                         the winner is {state.result}
                     </h2>
                 }
-                    <br/>
-                    <div className="btn-contain">
-                        <button 
-                            onClick={ ()=>{dispatch({type:"reset"})}}
-                        > 
-                            RESET
-                        </button>
-                    </div>
                 </>
             :
                 <h1 
@@ -54,6 +46,14 @@ function Layout(){
                     the game is active, next move: {state.options.playerSymbol}
                 </h1>
             }  
+                <br/> 
+                <div className="btn-contain">
+                    <button 
+                        onClick={ ()=>{dispatch({type:"reset"})}}
+                    > 
+                        RESET
+                    </button>
+                </div> 
             {state.history.length > 0 ?
                         <div className="btn-contain"> 
                             <button 
