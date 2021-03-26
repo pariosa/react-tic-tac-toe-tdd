@@ -34,7 +34,7 @@ function Layout(){
                     </div>
                 </>
             :
-                <h1 className="result" result={state.result} style={{color:"green"}}>the game is on</h1>
+                <h1 className="result" result={state.result} style={{color:"green"}}>the game is active, next move: {state.options.playerSymbol}</h1>
             }  
             {state.history.length > 0 ?
                         <div className="btn-contain"> 
