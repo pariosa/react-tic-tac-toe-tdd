@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "test": "jest --watch"
   },
-  "jest": {
+  "jest": { 
     "setupFilesAfterEnv": [
       "./src/setupTests.js"
     ]

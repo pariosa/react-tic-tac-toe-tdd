@@ -38,7 +38,7 @@ function Layout(){
             }  
             {state.history.length > 0 ?
                         <div className="btn-contain"> 
-                            <button onClick={ ()=>{dispatch({type:"rewind_time"})}}> REWIND TIME </button>
+                            <button className="rewind" onClick={ ()=>{dispatch({type:"rewind_time"})}}> REWIND TIME </button>
                         </div>
 
             :
